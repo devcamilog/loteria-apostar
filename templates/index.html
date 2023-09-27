@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Generador de Números de Lotería</h1>
+    <label for="lottery-select">Selecciona una lotería:</label>
+    <select id="lottery-select">
+        <!-- Opciones se llenarán automáticamente con JavaScript -->
+    </select>
+    <div id="result"></div>
+    <button id="spin-button">Girar</button>
+    <!-- Botón para recargar la página -->
+    <button id="reload-button">
+        <img src="{% static 'img/reload.png' %}" id="reload-img" alt="Esto es un signo de para que el cliente vuelva a recargar la pagina y asi jugar otra loteria distinta">
+    </button>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

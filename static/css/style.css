@@ -1,0 +1,37 @@
+/* style.css */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 22px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Establece un ancho fijo para los botones */
+#spin-button,
+#reload-button {
+    width: 150px; /* Puedes ajustar el valor según tus preferencias */
+}
+
+/* Cambia el tamaño de la imagen dentro de reload-button */
+#reload-button #reload-img {
+    width: 20px; /* Ajusta el tamaño de la imagen según tus preferencias */
+}
+
+#result {
+    top: 6px;
+    position: relative;
+    padding: 11px;
+}

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from loteria_app.views import vistaPrincipal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('loteria/', vistaPrincipal),
 ]
