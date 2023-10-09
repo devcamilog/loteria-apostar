@@ -5,16 +5,191 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Generador de Números de Lotería</h1>
-    <label for="lottery-select">Selecciona una lotería:</label>
-    <select id="lottery-select">
-        <!-- Opciones se llenarán automáticamente con JavaScript -->
+    <div id="lotteries-container"></div>
+    <!-- Agregamos el selector para la cantidad de números -->
+    <label for="number-of-numbers"></label>    
+    <select id="number-of-numbers" name="number-of-numbers" onchange="handleOption()">
+        <option disabled selected>Selecciona una cifra</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
     </select>
-    <div id="result"></div>
-    <button id="spin-button">Girar</button>
+    <br><br>
+    <div id="wheelContainer">
+        <div class="wheel">
+            <div class="digit-container">
+                <div class="digit digit1" >
+                    <div>
+                        <img src="{% static 'img/num_00.png' %}" id="num0_fila1"  alt="">
+                    </div>     
+                    <div>
+                        <img src="{% static 'img/num_01.png' %}"  id="num1_fila1" alt="">
+                    </div>       
+                    <div>
+                        <img src="{% static 'img/num_02.png' %}"  id="num2_fila1" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_03.png' %}"  id="num3_fila1" alt="">
+                    </div>
+                   
+                    <div>
+                        <img src="{% static 'img/num_04.png' %}" id="num4_fila1" alt="">
+                    </div>
+                   
+                    <div>
+                        <img src="{% static 'img/num_05.png' %}"  id="num5_fila1" alt="">
+                    </div>
+                   
+                    <div>
+                        <img src="{% static 'img/num_06.png' %}"  id="num6_fila1" alt="">
+                    </div>
+                   
+                    <div>
+                        <img src="{% static 'img/num_07.png' %}" id="num7_fila1" alt="">
+                    </div>
+                   
+                    <div>
+                        <img src="{% static 'img/num_08.png' %}" id="num8_fila1" alt="">
+                    </div>
+                   
+                    <div>
+                        <img src="{% static 'img/num_09.png' %}" id="num9_fila1" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wheel">
+            <div class="digit-container">
+                <div class="digit digit2" >
+                    <div>
+                        <img src="{% static 'img/num_00.png' %}"  id="num0_fila2" alt=""></div>
+                    <div>
+                        <img src="{% static 'img/num_01.png' %}"  id="num1_fila2" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_02.png' %}"  id="num2_fila2" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_03.png' %}"  id="num3_fila2" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_04.png' %}" id="num4_fila2" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_05.png' %}"  id="num5_fila2" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_06.png' %}"  id="num6_fila2" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_07.png' %}" id="num7_fila2" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_08.png' %}" id="num8_fila2" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_09.png' %}" id="num9_fila2" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wheel">
+            <div class="digit-container">
+                <div class="digit digit3">
+                    <div>
+                        <img src="{% static 'img/num_00.png' %}"  id="num0_fila3" alt=""></div>
+                    <div>
+                        <img src="{% static 'img/num_01.png' %}"  id="num1_fila3" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_02.png' %}"  id="num2_fila3" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_03.png' %}"  id="num3_fila3" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_04.png' %}" id="num4_fila3" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_05.png' %}"  id="num5_fila3" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_06.png' %}"  id="num6_fila3" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_07.png' %}" id="num7_fila3" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_08.png' %}" id="num8_fila3" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_09.png' %}" id="num9_fila3" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wheel">
+            <div class="digit-container">
+                <div class="digit digit4">
+                    <div>
+                        <img src="{% static 'img/num_00.png' %}"  id="num0_fila4" alt=""></div>
+                    <div>
+                        <img src="{% static 'img/num_01.png' %}"  id="num1_fila4" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_02.png' %}"  id="num2_fila4" alt="">
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_03.png' %}"  id="num3_fila4" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_04.png' %}" id="num4_fila4" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_05.png' %}"  id="num5_fila4" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_06.png' %}"  id="num6_fila4" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_07.png' %}" id="num7_fila4" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_08.png' %}" id="num8_fila4" alt="">
+    
+                    </div>
+                    <div>
+                        <img src="{% static 'img/num_09.png' %}" id="num9_fila4" alt="">
+                    </div>         
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="result">
+        <div>GIRA LA RULETA</div>
+    </div>
     <!-- Botón para recargar la página -->
-    <button id="reload-button">
-        <img src="{% static 'img/reload.png' %}" id="reload-img" alt="Esto es un signo de para que el cliente vuelva a recargar la pagina y asi jugar otra loteria distinta">
+    <button id="spin-button" onclick="startSpinning()">
+        <img src="{% static 'img/reload.png' %}" id="reload-img" alt="Simbolo de cargar pagina" class="logo">
     </button>
     <script src="{% static 'js/main.js' %}"></script>
 </body>

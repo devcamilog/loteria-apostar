@@ -1,7 +1,10 @@
+const digitElements = document.querySelectorAll('.digit');
 const spinButton = document.getElementById("spin-button");
 const lotterySelect = document.getElementById("lottery-select");
 const resultElement = document.getElementById("result");
+const reloadButton = document.getElementById('reload-button');
 const daysOfWeek = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sabado"];
+let spinning = false;
 const lotteriesByDay = {
     lunes: [
         "CAFETERITO DIA",
@@ -157,45 +160,35 @@ const lotteriesByDay = {
     ],    
 };
 
-function populateLotteryOptions() {
+function getAvailableLotteries() {
     const today = daysOfWeek[new Date().getDay()];
-    const availableLotteries = lotteriesByDay[today];
 
-    if (!availableLotteries) {
-        resultElement.textContent = "No hay loterías disponibles hoy";
-        spinButton.disabled = true;
+    if (!lotteriesByDay[today]) {
+        return [];
     } else {
         const now = new Date();
         const currentMilitaryTime = now.getHours() * 100 + now.getMinutes(); // Hora militar actual
 
-        availableLotteries.forEach((lottery) => {
-            const closingTime = getClosingTime(lottery, today); // Obtener el horario de cierre de la lotería
-            if (!closingTime || currentMilitaryTime <= closingTime) {
-                // Verificar si es "EXTRA DE COLOMBIA" y si es el último sábado del mes
-                if (lottery === "EXTRA DE COLOMBIA" && isLastSaturdayOfMonth(now)) {
-                    const option = document.createElement("option");
-                    option.value = lottery;
-                    option.textContent = lottery;
-                    lotterySelect.appendChild(option);
-                } else if (lottery !== "EXTRA DE COLOMBIA") {
-                    const option = document.createElement("option");
-                    option.value = lottery;
-                    option.textContent = lottery;
-                    lotterySelect.appendChild(option);
-                }
-            }
+        const availableLotteries = lotteriesByDay[today].filter((lottery) => {
+            const closingTime = getClosingTime(lottery, today);
+            return !closingTime || currentMilitaryTime <= closingTime;
         });
 
-        if (lotterySelect.options.length === 0) {
-            resultElement.textContent = "No hay loterías disponibles en este horario";
-            spinButton.disabled = true;
-        } else {
-            spinButton.disabled = false;
-        }
+        return availableLotteries;
     }
 }
 
-// Función para verificar si es el último sábado del mes
+function populateLotteryOptions() {
+    const availableLotteries = getAvailableLotteries();
+
+    if (availableLotteries.length === 0) {
+        resultElement.textContent = "No hay loterías disponibles en este horario";
+        spinButton.disabled = true;
+    } else {
+        spinButton.disabled = false;
+    }
+}
+
 function isLastSaturdayOfMonth(date) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // Nota: getMonth() devuelve valores de 0 a 11, así que agregamos 1 para obtener el mes correcto.
@@ -205,10 +198,7 @@ function isLastSaturdayOfMonth(date) {
     return date.getDate() === lastSaturday && date.getDay() === 6; // 6 representa el sábado
 }
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * 10000).toString().padStart(4, "0");
-}
-
+//funcion para definir los horarios en la que las loterias estan disponibles
 function getClosingTime(lottery, day) {
     // Define los horarios de cierre para cada lotería en formato HHMM (hora militar),
     const closingTimes = {
@@ -255,12 +245,17 @@ function getClosingTime(lottery, day) {
 populateLotteryOptions();
 
 spinButton.addEventListener("click", () => {
-    const selectedLottery = lotterySelect.value;
-    const randomNumber = getRandomNumber();
-    resultElement.textContent = `Lotería: ${selectedLottery}, Número: ${randomNumber}`;
+    const availableLotteries = getAvailableLotteries();
+
+    if (availableLotteries.length === 0) {
+        resultElement.textContent = "No hay loterías disponibles en este horario";
+    } else {
+        const randomIndex = Math.floor(Math.random() * availableLotteries.length);
+        const selectedLottery = availableLotteries[randomIndex];
+        const numberOfNumbers = document.getElementById("number-of-numbers").value;
+        resultElement.textContent = `${selectedLottery}`;
+    }
 });
-
-
 
 // Función para obtener el último sábado del mes
 function getLastSaturdayOfMonth(date) {
@@ -280,11 +275,91 @@ function getLastSaturdayOfMonth(date) {
     return lastSaturday;
 }
 
-// Obtén una referencia al botón de recarga
-const reloadButton = document.getElementById('reload-button');
-
-// Agrega un manejador de eventos para el clic en el botón de recarga
+// Funcion para recargar la pagina
 reloadButton.addEventListener('click', function() {
-    // Recarga la página actual
     location.reload();
 });
+
+function getRandomDigit() {
+    return Math.floor(Math.random() * 10);
+}
+
+async function spinDigit(digitElement, finalDigit) {
+    return new Promise(resolve => {
+        const animationDuration = 120; // Duración de la animación en milisegundos
+        const frameDuration = 1000 / 60; // Duración de un fotograma (60 FPS)
+        const frames = Math.ceil(animationDuration / frameDuration);
+        const increment = (finalDigit * 100) / frames; // Ajusta el valor 100 para centrar correctamente
+        let currentY = 0;
+        let frame = 0;
+        function animate() {
+            currentY -= increment;
+            digitElement.style.transform = `translateY(${currentY}%)`;
+            frame++;
+            if (frame < frames) {
+                requestAnimationFrame(animate);
+            } else {
+                digitElement.style.transform = `translateY(-${finalDigit * 100}%)`; // Ajusta el valor 100
+                resolve();
+            }
+        }
+        animate();
+    });
+}
+
+async function startSpinning() {
+    if (spinning) return;
+        spinning = true;
+        const finalDigits = [
+            getRandomDigit(),
+            getRandomDigit(),
+            getRandomDigit(),
+            getRandomDigit()
+        ];
+
+    for (let i = 0; i < digitElements.length; i++) {
+        await spinDigit(digitElements[i], finalDigits[i]);
+    }
+
+    setTimeout(() => {
+        const today = new Date();      
+        spinning = false;
+    }, 100);
+}
+
+
+// function handleOption() {
+//     var selectElement = document.getElementById('number-of-numbers');
+//     var selectedValue = selectElement.value;
+
+//     // Obtener todos los elementos con la clase "digit"
+//     var digitElements = document.getElementsByClassName('digit');
+
+//     // Mostrar los elementos seleccionados y ocultar los no seleccionados
+//     for (var i = 0; i < digitElements.length; i++) {
+//         digitElements[i].style.display = 'none'; // Ocultar todos los elementos
+//     }
+
+//     // Mostrar solo los elementos seleccionados
+//     for (var i = 0; i < selectedValue; i++) {
+//         digitElements[i].style.display = 'block'; // Mostrar elementos seleccionados
+//     }
+// }
+
+function handleOption() {
+    var selectElement = document.getElementById('number-of-numbers');
+    var selectedValue = selectElement.value;
+
+    // Obtener todos los elementos con la clase "digit"
+    var digitElements = document.getElementsByClassName('digit');
+
+    // Ocultar todos los elementos
+    for (var i = 0; i < digitElements.length; i++) {
+        digitElements[i].style.display = 'none';
+    }
+
+    // Mostrar solo los elementos seleccionados de izquierda a derecha
+    for (var i = digitElements.length - 1; i >= digitElements.length - selectedValue; i--) {
+        digitElements[i].style.display = 'block';
+    }
+}
