@@ -3,7 +3,6 @@ body {
     padding: 0;
     background-image: url('/static/img/plantilla_inicio.png');
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-position: center;
@@ -35,16 +34,3 @@ body {
 }
 
 
-/* Regla de medios para pantallas con una anchura de 1501px a 1920px */
-@media screen and (min-width: 1501px) and (max-width: 1920px) {
-    body {
-        background-size: 100%;
-    }
-}
-
-/* Regla de medios para pantallas con una anchura de más de 1920px */
-@media screen and (min-width: 1921px) {
-    body {
-        background-size: 100%;
-    }
-}
