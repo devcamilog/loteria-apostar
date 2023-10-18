@@ -1,0 +1,82 @@
+[1mdiff --git a/static/css/style.css b/static/css/style.css[m
+[1mindex a45dcfe..01f495c 100644[m
+[1m--- a/static/css/style.css[m
+[1m+++ b/static/css/style.css[m
+[36m@@ -117,76 +117,3 @@[m [mbutton#spin-button img.logo {[m
+     height: 3.25rem;[m
+     border-radius: 0.625rem;[m
+ }[m
+[31m-[m
+[31m-@media screen and (min-width: 1326px) and (min-height: 556px)  {[m
+[31m-[m
+[31m-    #result {[m
+[31m-        font-size: 2rem;[m
+[31m-        color: white;[m
+[31m-        top: 21.6rem;[m
+[31m-        right: -16rem;[m
+[31m-        width: 21rem;[m
+[31m-        font-weight: bold;[m
+[31m-    }[m
+[31m-    [m
+[31m-    #wheelContainer {[m
+[31m-        margin-bottom: -16.75rem;[m
+[31m-    }[m
+[31m-    [m
+[31m-    .wheel {[m
+[31m-        width: 10.69rem;[m
+[31m-        height: 23.69rem;[m
+[31m-        margin: 0.375rem 3rem;[m
+[31m-        top: 2.5rem;[m
+[31m-    }[m
+[31m-    [m
+[31m-    .digit1, .digit2, .digit3, .digit4 {[m
+[31m-        position: absolute;[m
+[31m-        display: block;[m
+[31m-        text-align: center;[m
+[31m-        width: 10.75rem;[m
+[31m-        height: 22.06rem;[m
+[31m-    }[m
+[31m-    [m
+[31m-    /* Cambiar el tamaño de las imágenes dentro de .digit */[m
+[31m-    .digit img {[m
+[31m-        width: 10.5rem; /* Cambié a unidades rem */[m
+[31m-        height: auto;[m
+[31m-    }[m
+[31m-    [m
+[31m-    #lotteryContainer {[m
+[31m-        font-size: 1.5rem; /* Cambié a unidades rem */[m
+[31m-        text-align: center;[m
+[31m-    }[m
+[31m-    [m
+[31m-    .lottery-text {[m
+[31m-        font-size: 2.25rem; /* Cambié a unidades rem */[m
+[31m-        font-weight: bold;[m
+[31m-        text-transform: uppercase;[m
+[31m-        transform: none;[m
+[31m-        transition: none;[m
+[31m-    }[m
+[31m-    [m
+[31m-[m
+[31m-    button#spin-button img.logo {[m
+[31m-        width: 3.44rem; /* Cambié a unidades rem */[m
+[31m-        height: auto;[m
+[31m-    }[m
+[31m-    [m
+[31m-    #number-of-numbers {[m
+[31m-        font-size: 1rem;[m
+[31m-        font-weight: bold;[m
+[31m-        position: relative;[m
+[31m-        top: 7rem;[m
+[31m-        right: -8.95rem;[m
+[31m-        color: white;[m
+[31m-        background-color: #c5a920;[m
+[31m-        width: 11.75rem;[m
+[31m-        height: 2.25rem;[m
+[31m-        border-radius: 0.625rem;[m
+[31m-    }[m
+[31m-    button {[m
+[31m-        top: 18rem;[m
+[31m-        left: 44rem;[m
+[31m-    }[m
+[31m-}[m
+\ No newline at end of file[m
