@@ -118,7 +118,7 @@ button#spin-button img.logo {
     border-radius: 0.625rem;
 }
 
-@media (min-width:1334px) {
+@media screen and (width: 1326px) and (height: 556px)  {
 
     #result {
         font-size: 2rem;
