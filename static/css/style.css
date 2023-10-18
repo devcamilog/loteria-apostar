@@ -111,12 +111,14 @@ button#spin-button img.logo {
 }
 
 #number-of-numbers {
+    font-size: 1rem;
+    font-weight: bold;
     position: relative;
     top: 10.3rem;
     right: -14.95rem;
     color: white;
     background-color: #c5a920;
-    width: 10.75rem;
+    width: 12.75rem;
     height: 3.25rem;
     border-radius: 0.625rem;
 }
