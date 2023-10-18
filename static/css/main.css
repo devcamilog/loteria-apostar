@@ -1,12 +1,12 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    background-image: url(/static/img/plantilla_inicio.png );
+    background-image: url('/static/img/plantilla_inicio.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-size: 1370px 650px;
-   
-
+    background-position: center center; /* Centra horizontal y verticalmente */
+    min-width: 100%;
+    min-height: 100%;
 }
 .boton {
     width: 430px; /* Ancho del cuadro */
@@ -33,25 +33,3 @@ body {
     overflow: hidden;
 }
 
-
-/* Regla de medios para pantallas con una anchura de hasta 1500px */
-@media screen and (max-width: 1500px) {
-    body {
-        background-size: 100%;
-        
-    }
-}
-
-/* Regla de medios para pantallas con una anchura de 1501px a 1920px */
-@media screen and (min-width: 1501px) and (max-width: 1920px) {
-    body {
-        background-size: 100%;
-    }
-}
-
-/* Regla de medios para pantallas con una anchura de más de 1920px */
-@media screen and (min-width: 1921px) {
-    body {
-        background-size: 100%;
-    }
-}
