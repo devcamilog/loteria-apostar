@@ -61,13 +61,8 @@ button {
 .digit1, .digit2, .digit3, .digit4 {
     position: absolute;
     display: block;
-    /* flex-direction: column;
-    gap: 0.5rem;
-    transition: transform 0.7s cubic-bezier(0.7);
-    transform: translateY(0.0625rem); */
     text-align: center;
-    /* align-items: center; */
-    width: 13.75rem;
+    width: 14.75rem;
     height: 22.06rem;
 }
 
@@ -121,4 +116,77 @@ button#spin-button img.logo {
     width: 12.75rem;
     height: 3.25rem;
     border-radius: 0.625rem;
+}
+
+@media (min-width:1334px) {
+
+    #result {
+        font-size: 2rem;
+        color: white;
+        top: 21.6rem;
+        right: -16rem;
+        width: 21rem;
+        font-weight: bold;
+    }
+    
+    #wheelContainer {
+        margin-bottom: -16.75rem;
+    }
+    
+    .wheel {
+        width: 10.69rem;
+        height: 23.69rem;
+        margin: 0.375rem 3rem;
+        top: 2.5rem;
+    }
+    
+    .digit1, .digit2, .digit3, .digit4 {
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 10.75rem;
+        height: 22.06rem;
+    }
+    
+    /* Cambiar el tamaño de las imágenes dentro de .digit */
+    .digit img {
+        width: 10.5rem; /* Cambié a unidades rem */
+        height: auto;
+    }
+    
+    #lotteryContainer {
+        font-size: 1.5rem; /* Cambié a unidades rem */
+        text-align: center;
+    }
+    
+    .lottery-text {
+        font-size: 2.25rem; /* Cambié a unidades rem */
+        font-weight: bold;
+        text-transform: uppercase;
+        transform: none;
+        transition: none;
+    }
+    
+
+    button#spin-button img.logo {
+        width: 3.44rem; /* Cambié a unidades rem */
+        height: auto;
+    }
+    
+    #number-of-numbers {
+        font-size: 1rem;
+        font-weight: bold;
+        position: relative;
+        top: 7rem;
+        right: -8.95rem;
+        color: white;
+        background-color: #c5a920;
+        width: 11.75rem;
+        height: 2.25rem;
+        border-radius: 0.625rem;
+    }
+    button {
+        top: 18rem;
+        left: 44rem;
+    }
 }
