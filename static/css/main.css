@@ -5,6 +5,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-size: 1370px 650px;
+   
 
 }
 .boton {
@@ -30,4 +31,27 @@ body {
     width: 0;
     height: 0;
     overflow: hidden;
+}
+
+
+/* Regla de medios para pantallas con una anchura de hasta 1500px */
+@media screen and (max-width: 1500px) {
+    body {
+        background-size: 100%;
+        
+    }
+}
+
+/* Regla de medios para pantallas con una anchura de 1501px a 1920px */
+@media screen and (min-width: 1501px) and (max-width: 1920px) {
+    body {
+        background-size: 100%;
+    }
+}
+
+/* Regla de medios para pantallas con una anchura de más de 1920px */
+@media screen and (min-width: 1921px) {
+    body {
+        background-size: 100%;
+    }
 }
