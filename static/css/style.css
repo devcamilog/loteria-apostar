@@ -49,26 +49,26 @@ button {
 .wheel {
     display: inline-block;
     font-size: 14.13rem;
-    width: 13.69rem;
-    height: 16.69rem;
+    width: 15.69rem;
+    height: 23.69rem;
     text-align: center;
-    margin: 0.375rem 1.9rem;
+    margin: 0.375rem 3.9rem;
     overflow: hidden;
     position: relative;
-    top: 6.5rem;
+    top: 12.5rem;
 }
 
 .digit1, .digit2, .digit3, .digit4 {
     position: absolute;
     display: block;
-    flex-direction: column;
+    /* flex-direction: column;
     gap: 0.5rem;
     transition: transform 0.7s cubic-bezier(0.7);
-    transform: translateY(0.0625rem);
+    transform: translateY(0.0625rem); */
     text-align: center;
-    align-items: center;
+    /* align-items: center; */
     width: 13.75rem;
-    height: 16.06rem;
+    height: 22.06rem;
 }
 
 .digit1 div, .digit2 div, .digit3 div, .digit4 div {
@@ -78,6 +78,12 @@ button {
     flex-wrap: wrap;
     align-items: center;
     height: 100%; /* Mantuve esta en unidades absolutas porque depende de la imagen de fondo */
+}
+
+/* Cambiar el tamaño de las imágenes dentro de .digit */
+.digit img {
+    width: 16.5rem; /* Cambié a unidades rem */
+    height: auto;
 }
 
 #lotteryContainer {
@@ -98,11 +104,6 @@ button {
     top: 14.67rem; /* Cambié a unidades rem */
 }
 
-/* Cambiar el tamaño de las imágenes dentro de .digit */
-.digit img {
-    width: 12.5rem; /* Cambié a unidades rem */
-    height: auto;
-}
 
 button#spin-button img.logo {
     width: 3.44rem; /* Cambié a unidades rem */
@@ -111,11 +112,11 @@ button#spin-button img.logo {
 
 #number-of-numbers {
     position: relative;
-    top: 6.3rem;
-    right: -9.95rem;
+    top: 10.3rem;
+    right: -14.95rem;
     color: white;
     background-color: #c5a920;
-    width: 9.75rem;
+    width: 10.75rem;
     height: 3.25rem;
     border-radius: 0.625rem;
 }
