@@ -18,23 +18,23 @@ button {
     border: none;
     cursor: pointer;
     position: relative;
-    top: 5rem;
-    left: 43.5rem;
+    top: 12rem;
+    left: 61rem;
 }
 
 #result {
-    font-size: 2rem;
+    font-size: 3rem;
     color: white;
-    top: 8.8rem;
+    top: 17.8rem;
     position: relative;
     padding: 0.5rem;
-    right: -18rem;
-    width: 17rem;
+    right: -26rem;
+    width: 21rem;
     white-space: nowrap;
     align-items: center;
     display: flex;
     justify-content: center;
-    align-content: center;
+    /* align-content: center; */
     flex-wrap: nowrap;
     flex-direction: row;
 }
