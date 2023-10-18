@@ -6,6 +6,8 @@ body {
     background-size: contain;
     min-width: 100%;
     min-height: 100%;
+    background-size: 1370px 650px;
+
 }
 .boton {
     width: 430px; /* Ancho del cuadro */
@@ -36,7 +38,7 @@ body {
 /* Regla de medios para pantallas con una anchura de hasta 1500px */
 @media screen and (max-width: 1500px) {
     body {
-        background-size: 100%;
+        /* background-size: 100%; */
         /* background-position: center center; */
     }
 }
