@@ -34,9 +34,9 @@ button {
     align-items: center;
     display: flex;
     justify-content: center;
-    /* align-content: center; */
     flex-wrap: nowrap;
     flex-direction: row;
+    font-weight: bold;
 }
 
 #wheelContainer {
