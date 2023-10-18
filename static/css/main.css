@@ -5,8 +5,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* min-width: 100%;
-    min-height: 100%; */
     background-size: 1370px 650px;
     background-position: center;
 
@@ -36,14 +34,6 @@ body {
     overflow: hidden;
 }
 
-
-/* Regla de medios para pantallas con una anchura de hasta 1500px */
-@media screen and (max-width: 1500px) {
-    body {
-        /* background-size: 100%; */
-        /* background-position: center center; */
-    }
-}
 
 /* Regla de medios para pantallas con una anchura de 1501px a 1920px */
 @media screen and (min-width: 1501px) and (max-width: 1920px) {
