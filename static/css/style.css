@@ -122,4 +122,5 @@ button#spin-button img.logo {
 #contador {
     font-weight: bold;
     font-size: 2rem;
+    position: absolute;
 }
