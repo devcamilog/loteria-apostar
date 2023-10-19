@@ -19,6 +19,6 @@ from loteria_app.views import vistaPrincipal, vistaLoteria
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', vistaPrincipal),
+    path('inicio/', vistaPrincipal, name='inicio'),
     path('loteria/', vistaLoteria, name='loteria'),
 ]

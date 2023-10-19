@@ -328,24 +328,6 @@ async function startSpinning() {
 }
 
 
-// function handleOption() {
-//     var selectElement = document.getElementById('number-of-numbers');
-//     var selectedValue = selectElement.value;
-
-//     // Obtener todos los elementos con la clase "digit"
-//     var digitElements = document.getElementsByClassName('digit');
-
-//     // Mostrar los elementos seleccionados y ocultar los no seleccionados
-//     for (var i = 0; i < digitElements.length; i++) {
-//         digitElements[i].style.display = 'none'; // Ocultar todos los elementos
-//     }
-
-//     // Mostrar solo los elementos seleccionados
-//     for (var i = 0; i < selectedValue; i++) {
-//         digitElements[i].style.display = 'block'; // Mostrar elementos seleccionados
-//     }
-// }
-
 function handleOption() {
     var selectElement = document.getElementById('number-of-numbers');
     var selectedValue = selectElement.value;
@@ -363,3 +345,5 @@ function handleOption() {
         digitElements[i].style.display = 'block';
     }
 }
+
+

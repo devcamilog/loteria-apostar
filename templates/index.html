@@ -8,6 +8,7 @@
     <title>Loteria</title>
 </head>
 <body>
+    <p id="contador">Redirección en <span id="countdown">10</span> segundos...</p>
     <div id="lotteries-container"></div>
     <!-- Agregamos el selector para la cantidad de números -->
     <label for="number-of-numbers"></label>    
@@ -195,5 +196,22 @@
         <img src="{% static 'img/reload.png' %}" id="reload-img" alt="Simbolo de cargar pagina" class="logo">
     </button>
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        var countdownElement = document.getElementById("countdown");
+        var seconds = 10;
+
+        function updateCountdown() {
+            countdownElement.textContent = seconds;
+            seconds--;
+
+            if (seconds < 0) {
+                window.location.href = "{% url 'inicio' %}";
+            } else {
+                setTimeout(updateCountdown, 1000); // Actualiza cada 1 segundo
+            }
+        }
+
+        updateCountdown();
+    </script>
 </body>
 </html>
