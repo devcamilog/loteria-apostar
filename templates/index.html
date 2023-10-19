@@ -9,19 +9,19 @@
 </head>
 <body>
     <p id="contador">Redirección en <span id="countdown">10</span> segundos...</p>
-    <div id="lotteries-container"></div>
     <!-- Agregamos el selector para la cantidad de números -->
-    <label for="number-of-numbers"></label>    
-    <select id="number-of-numbers" name="number-of-numbers" onchange="handleOption()">
-        <option disabled selected>Selecciona una cifra</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-    <div id="wheelContainer">
-        <div class="wheel">
-            <div class="digit-container">
+    <label for="number-of-numbers">
+        <select id="number-of-numbers" name="number-of-numbers" onchange="handleOption()">
+            <option disabled selected>Selecciona una cifra</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+    </label>    
+    <div class="wheelContainer">
+        <div class="wheel wheel-1">
                 <div class="digit digit1" >
                     <div>
                         <img src="{% static 'img/num_00.png' %}" id="num0_fila1"  alt="">
@@ -59,11 +59,9 @@
                     <div>
                         <img src="{% static 'img/num_09.png' %}" id="num9_fila1" alt="">
                     </div>
-                </div>
-            </div>
+                </div>         
         </div>
-        <div class="wheel">
-            <div class="digit-container">
+        <div class="wheel wheel-2">
                 <div class="digit digit2" >
                     <div>
                         <img src="{% static 'img/num_00.png' %}"  id="num0_fila2" alt=""></div>
@@ -100,11 +98,9 @@
                     <div>
                         <img src="{% static 'img/num_09.png' %}" id="num9_fila2" alt="">
                     </div>
-                </div>
-            </div>
+                </div>         
         </div>
-        <div class="wheel">
-            <div class="digit-container">
+        <div class="wheel wheel-3">
                 <div class="digit digit3">
                     <div>
                         <img src="{% static 'img/num_00.png' %}"  id="num0_fila3" alt=""></div>
@@ -141,11 +137,9 @@
                     <div>
                         <img src="{% static 'img/num_09.png' %}" id="num9_fila3" alt="">
                     </div>
-                </div>
-            </div>
+                </div>        
         </div>
-        <div class="wheel">
-            <div class="digit-container">
+        <div class="wheel wheel-4">
                 <div class="digit digit4">
                     <div>
                         <img src="{% static 'img/num_00.png' %}"  id="num0_fila4" alt=""></div>
@@ -182,35 +176,38 @@
                     <div>
                         <img src="{% static 'img/num_09.png' %}" id="num9_fila4" alt="">
                     </div>         
-                </div>
-            </div>
+                </div>         
         </div>
     </div>
-    <div id="result">
-        <div>GIRA LA RULETA</div>
+
+    <div class="resultado">
+        <div id="result">
+            <div>GIRA LA RULETA</div>
+        </div>
+        <!-- Botón para recargar la página -->
+        <button id="spin-button" onclick="startSpinning()">
+            <img src="{% static 'img/reload.png' %}" id="reload-img" alt="Simbolo de cargar pagina" class="logo">
+        </button>
     </div>
 
-    <!-- Botón para recargar la página -->
-    <button id="spin-button" onclick="startSpinning()">
-        <img src="{% static 'img/reload.png' %}" id="reload-img" alt="Simbolo de cargar pagina" class="logo">
-    </button>
+
     <script src="{% static 'js/main.js' %}"></script>
     <script>
-        var countdownElement = document.getElementById("countdown");
-        var seconds = 10;
+        // var countdownElement = document.getElementById("countdown");
+        // var seconds = 10;
 
-        function updateCountdown() {
-            countdownElement.textContent = seconds;
-            seconds--;
+        // function updateCountdown() {
+        //     countdownElement.textContent = seconds;
+        //     seconds--;
 
-            if (seconds < 0) {
-                window.location.href = "{% url 'inicio' %}";
-            } else {
-                setTimeout(updateCountdown, 1000); // Actualiza cada 1 segundo
-            }
-        }
+        //     if (seconds < 0) {
+        //         window.location.href = "{% url 'inicio' %}";
+        //     } else {
+        //         setTimeout(updateCountdown, 1000); // Actualiza cada 1 segundo
+        //     }
+        // }
 
-        updateCountdown();
+        // updateCountdown();
     </script>
 </body>
 </html>
