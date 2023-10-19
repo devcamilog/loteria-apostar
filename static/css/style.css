@@ -152,6 +152,7 @@ button#spin-button img.logo {
     .wheelContainer {
         top: 8.6rem; 
         margin: 94px 0px;
+        gap: 105px;
     }
 
     /* .wheel {
