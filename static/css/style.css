@@ -126,3 +126,18 @@ button#spin-button img.logo {
     position: absolute;
 }
 
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #result {
+        font-size: 2rem;
+        top: 10.8rem;
+        right: -15rem;
+  }
+  #number-of-numbers {
+    font-size: 1rem;
+    top: 10.3rem;
+    right: -6.95rem;
+    width: 11.75rem;
+    height: 2.25rem;
+}
+}
