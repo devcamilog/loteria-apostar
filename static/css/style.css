@@ -11,6 +11,7 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%; 
     background-position: center;
+    overflow: hidden;
 }
 
 button {
@@ -26,7 +27,7 @@ button {
 #result {
     font-size: 3rem;
     color: white;
-    top: 15.8rem;
+    top: 16.8rem;
     position: relative;
     padding: 0.5rem;
     right: -26rem;
@@ -60,7 +61,7 @@ button {
 }
 
 .digit1, .digit2, .digit3, .digit4 {
-    position: absolute;
+    /* position: absolute; */
     display: block;
     text-align: center;
     width: 14.75rem;
@@ -124,3 +125,4 @@ button#spin-button img.logo {
     font-size: 2rem;
     position: absolute;
 }
+
