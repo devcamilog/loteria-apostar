@@ -18,14 +18,14 @@ button {
     border: none;
     cursor: pointer;
     position: relative;
-    top: 12rem;
+    top: 11rem;
     left: 61rem;
 }
 
 #result {
     font-size: 3rem;
     color: white;
-    top: 17.8rem;
+    top: 15.8rem;
     position: relative;
     padding: 0.5rem;
     right: -26rem;
