@@ -199,24 +199,23 @@
         </button>
     </div>
 
-
     <script src="{% static 'js/main.js' %}"></script>
     <script>
-        // var countdownElement = document.getElementById("countdown");
-        // var seconds = 15;
+        var countdownElement = document.getElementById("countdown");
+        var seconds = 15;
 
-        // function updateCountdown() {
-        //     countdownElement.textContent = seconds;
-        //     seconds--;
+        function updateCountdown() {
+            countdownElement.textContent = seconds;
+            seconds--;
 
-        //     if (seconds < 0) {
-        //         window.location.href = "{% url 'inicio' %}";
-        //     } else {
-        //         setTimeout(updateCountdown, 1000); // Actualiza cada 1 segundo
-        //     }
-        // }
+            if (seconds < 0) {
+                window.location.href = "{% url 'inicio' %}";
+            } else {
+                setTimeout(updateCountdown, 1000); // Actualiza cada 1 segundo
+            }
+        }
 
-        // updateCountdown();
+        updateCountdown();
     </script>
 </body>
 </html>
