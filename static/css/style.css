@@ -207,4 +207,7 @@ button#spin-button img.logo {
         width: 8.5rem;
         height: 11rem;
     }
+    .wheelContainer {
+        top: 5.6rem;
+    }
 }
