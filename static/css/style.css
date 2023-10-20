@@ -96,6 +96,7 @@ body {
 }
 
 .resultado {
+    display: flex;
     position: relative;
     /* background-color: rgba(255, 255, 0, 0.357); */
     height: 5.4rem;
@@ -128,8 +129,7 @@ button {
     border: none;
     cursor: pointer;
     position: relative;
-    top: -2.5rem;
-    left: 45rem;
+    left: 23rem;
 }
 
 
@@ -153,6 +153,14 @@ button#spin-button img.logo {
         top: 8.6rem; 
         margin: 94px 0px;
         gap: 105px;
+    }
+
+    .resultado {
+        top: 18vh;
+    }
+
+    button#spin-button img.logo {
+        left: 45rem;
     }
 
     /* .wheel {
