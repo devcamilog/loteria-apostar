@@ -162,10 +162,11 @@ button#spin-button img.logo {
     button#spin-button img.logo {
         width: 6rem;
     }
-    .button {
+    
+    button {
         bottom: 0.5rem;
         left: 40rem;
-    }
+    }    
 
     /* .wheel {
         margin: 3.375rem 5.9rem;
