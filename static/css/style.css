@@ -168,23 +168,18 @@ button#spin-button img.logo {
     button {
         bottom: 0.5rem;
         left: 40rem;
-    }    
+    } 
 
-    /* .wheel {
-        margin: 3.375rem 5.9rem;
-    }
-
-    .digit1, .digit2, .digit3, .digit4 {
-        width: 16rem; 
-        height: 17.5rem; 
+    #result {
+        right: -22rem;
     }
 
     .digit img {
         width: 14rem; 
         height: 16rem; 
     }
+    .digit1, .digit2, .digit3, .digit4 {
+        height: 16.06rem;
+    }
 
-    .resultado {
-        top: 19.vh;
-    } */
 }
