@@ -160,7 +160,11 @@ button#spin-button img.logo {
     }
 
     button#spin-button img.logo {
-        left: 45rem;
+        width: 45rem;
+    }
+    .button {
+        bottom: 0.5rem;
+        left: 40rem;
     }
 
     /* .wheel {
