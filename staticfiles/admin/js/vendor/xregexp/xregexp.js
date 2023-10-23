@@ -1,0 +1,1 @@
+/home/ubuntu/loteria_project/env/lib/python3.10/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/xregexp.js

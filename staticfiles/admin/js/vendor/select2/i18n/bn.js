@@ -1,0 +1,1 @@
+/home/ubuntu/loteria_project/env/lib/python3.10/site-packages/django/contrib/admin/static/admin/js/vendor/select2/i18n/bn.js
